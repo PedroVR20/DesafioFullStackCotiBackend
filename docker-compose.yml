@@ -1,0 +1,16 @@
+services:
+  postgres-db:
+    image: postgres:13
+    container_name: banco_postgres
+    environment:
+      POSTGRES_USER: pedro
+      POSTGRES_PASSWORD: user123
+      POSTGRES_DB: produtosDB
+    ports:
+      - "5439:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
